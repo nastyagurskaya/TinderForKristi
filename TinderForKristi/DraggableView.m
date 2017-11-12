@@ -168,7 +168,7 @@
                      }];
     
     [delegate cardSwipedRight:self];
-    
+    [self alertMessage];
     NSLog(@"YES");
 }
 
@@ -184,7 +184,8 @@
                      }];
     
     [delegate cardSwipedLeft:self];
-    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@":((((((" message:@"Why not? He was so sexy🔥" delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:@"CANCELCANCEL!", nil];
+    [alert show];
     NSLog(@"NO");
 }
 
@@ -200,7 +201,7 @@
                      }];
     
     [delegate cardSwipedRight:self];
-    
+    [self alertMessage];
     NSLog(@"YES");
 }
 
@@ -216,10 +217,40 @@
                      }];
     
     [delegate cardSwipedLeft:self];
-    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@":((((((" message:@"Why not? He was so sexy🔥" delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:@"CANCELCANCEL!", nil];
+    [alert show];
     NSLog(@"NO");
 }
-
+-(void)alertMessage{
+    switch (self.number) {
+     case 1:{
+     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Yeeeaah!" message:@"Tell them why you swiped right" delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:@"Done", nil];
+     [alert show];
+     break;
+     }
+     case 2:{
+     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Da!" message:@"Are you hand tired of something?" delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:@"YES", nil];
+     [alert show];
+     break;
+     }
+     case 3:{
+     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Si!" message:@"The defenition of FOMO: Fear of Missing out" delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:@"PFFFFF", nil];
+     [alert show];
+     break;
+     }
+     case 4:{
+     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Tak!" message:@"Don't swipe and drive!" delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:@"Okaayyyy", nil];
+     [alert show];
+     break;
+     }
+     default:{
+     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oui!" message:@"And to think you almost swiped left..." delegate:self cancelButtonTitle:@"Continue" otherButtonTitles:@"Oh,God! No!", nil];
+     [alert show];
+     break;
+        }
+     }
+    
+}
 
 
 @end
