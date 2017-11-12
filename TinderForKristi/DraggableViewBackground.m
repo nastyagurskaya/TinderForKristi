@@ -33,7 +33,7 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     if (self) {
         [super layoutSubviews];
         [self setupView];
-        exampleCardLabels = [[NSArray alloc]initWithObjects:@"first",@"second",@"third",@"fourth",@"last", nil]; //%%% placeholder for card-specific information
+        exampleCardLabels = [[NSArray alloc]initWithObjects:@"mazur",@"second",@"third",@"fourth",@"last", nil]; //%%% placeholder for card-specific information
         loadedCards = [[NSMutableArray alloc] init];
         allCards = [[NSMutableArray alloc] init];
         cardsLoadedIndex = 0;
@@ -75,9 +75,15 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
 -(DraggableView *)createDraggableViewWithDataAtIndex:(NSInteger)index
 {
     DraggableView *draggableView = [[DraggableView alloc]initWithFrame:CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT)];
+    NSString* name = [exampleCardLabels objectAtIndex:index];
     draggableView.information.text = [exampleCardLabels objectAtIndex:index]; //%%% placeholder for card-specific information
     draggableView.delegate = self;
     draggableView.number = index;
+    UIImage* img = [UIImage imageNamed: name];
+    UIImageView * myImageView = [[UIImageView alloc] initWithImage: img];
+    [myImageView setFrame:CGRectMake(0, 0, draggableView.frame.size.width, draggableView.frame.size.height)];
+    
+    [draggableView addSubview:myImageView];
     return draggableView;
 }
 

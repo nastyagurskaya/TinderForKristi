@@ -28,14 +28,17 @@
 @synthesize panGestureRecognizer;
 @synthesize information;
 @synthesize overlayView;
+@synthesize namesOfImages; //%%% all the labels I'm using as example data at the moment
 
 - (id)initWithFrame:(CGRect)frame
 {
+    namesOfImages = [[NSArray alloc]initWithObjects:@"mazur",@"second",@"third",@"fourth",@"last", nil];
     self = [super initWithFrame:frame];
     if (self) {
         [self setupView];
         
 #warning placeholder stuff, replace with card-specific information {
+        
         information = [[UILabel alloc]initWithFrame:CGRectMake(0, 50, self.frame.size.width, 100)];
         information.text = @"no info given";
         [information setTextAlignment:NSTextAlignmentCenter];
